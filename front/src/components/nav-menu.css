@@ -23,3 +23,30 @@
   height: 40px;
   margin: 0 0.5rem;
 }
+.nav-cart{
+  width: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.5rem;
+}
+.nav-cart a{
+  text-decoration: none;
+  color: var(--bg-secondary);
+}
+.nav-cart  span{
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: var(--blue-primary);
+  color: var(--blue-secondary);
+  font-size: 1rem;
+}

@@ -14,7 +14,8 @@ const NavMenu = () => {
           </picture>
         </Link>
         <input type="search" name="nav-search" placeholder='Search Product...' />
-        <Link to='/cart'><i className="fas fa-shopping-cart"></i></Link>
+        <div className='nav-cart'>        <Link to='/cart' ><span>##</span><i className="fas fa-shopping-cart"></i></Link>
+</div>
       </nav>
     </header>
   )
