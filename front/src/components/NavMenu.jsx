@@ -4,7 +4,7 @@ import logoMobile from '../assets/favicon.png'
 import './nav-menu.css'
 const NavMenu = () => {
   return (
-    <div className='container-nav'>
+    <header className='container-nav'>
       <nav className='nav-menu'>
       <picture>
         <source media="(min-width: 600px)" srcSet={logoDesktop} />
@@ -13,7 +13,7 @@ const NavMenu = () => {
       <input type="search" name="nav-search" placeholder='Search Product...' />
       carrito 
     </nav>
-    </div>
+    </header>
   )
 }
 

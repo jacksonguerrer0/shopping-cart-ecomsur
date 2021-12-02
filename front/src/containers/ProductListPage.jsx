@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './product-list-page.css'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const ProductListPage = () => {
   const [product, setProduct] = useState([])
@@ -11,14 +11,16 @@ const ProductListPage = () => {
   }, [])
   console.log(product)
   return (
-    <main className='container-product-list'>
+    <>
+        <main className='container-product-list'>
       <h2>Electronics</h2>
       <section className='product-list'>
         {
           product.map(ele => {
             let image = `http://localhost:5000${ele.image}`
+            console.log(image)
             return(
-            <Link to='/detail' key={ele._id} className='product-list-card'>
+            <Link to={`detail/${ele._id}`} key={ele._id} className='product-list-card'>
             <img src={image} alt={ele.name} />
             <span>$ {ele.price}</span>
             <h3><small>{ele.name}</small></h3>
@@ -27,6 +29,8 @@ const ProductListPage = () => {
         }
       </section>
     </main>
+    <Outlet />
+    </>
   )
 }
 
