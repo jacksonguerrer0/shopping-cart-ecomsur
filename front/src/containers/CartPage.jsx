@@ -1,5 +1,6 @@
 import React from 'react'
 import './cart-page.css'
+import {Link} from 'react-router-dom'
 const CartPage = () => {
   return (
     <section className='cart-container'>
@@ -17,33 +18,8 @@ const CartPage = () => {
         <tbody>
         <tr>
           <td>
-            <img src="http://localhost:5000/images/camera.jpg" alt="" />
-          </td>
-          <td>10</td>
-          <td>$3333</td>
-          <td>
-            <button className='btn-minus'><i className="fas fa-minus"></i></button>
-            <button className='btn-remove'><i className="fas fa-trash"></i></button>
-            <button className='btn-plus'><i className="fas fa-plus"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="http://localhost:5000/images/camera.jpg" alt="" />
-            <p>Nombre del producto</p>
-          </td>
-          <td>10</td>
-          <td>$3333</td>
-          <td>
-            <button className='btn-minus'><i className="fas fa-minus"></i></button>
-            <button className='btn-remove'><i className="fas fa-trash"></i></button>
-            <button className='btn-plus'><i className="fas fa-plus"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="http://localhost:5000/images/camera.jpg" alt="" />
-            <p>Nombre del producto</p>
+          <Link to='/detail/23'><img src="http://localhost:5000/images/camera.jpg" alt="" />
+          </Link>
           </td>
           <td>10</td>
           <td>$3333</td>
