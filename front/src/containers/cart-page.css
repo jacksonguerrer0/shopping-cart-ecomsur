@@ -1,0 +1,62 @@
+/* Component Table */
+.cart-table{
+  display: block;
+  width: 100%;
+  max-width: 880px;
+  padding: 1rem;
+  margin: 0.5rem auto 3rem auto;
+  background-color: var(--bg-secondary);
+  overflow-x: auto;
+}
+.cart-table > thead tr{
+  display: block;
+  border-bottom: 2px solid var(--c-border-transparent);
+}
+.cart-table > tbody{
+  display: block;
+  height: 70vh;
+}
+.cart-table > tbody tr{
+  display: block;
+  margin-top: 1rem;
+  border-bottom: 2px solid var(--c-border-white);
+}
+.cart-table th, td{
+  min-width: 200px;
+  text-align: center;
+}
+.cart-table tr{
+  width: 100%;
+}
+img{
+  width: 200px;
+  height: auto;
+}
+
+/* Utils */
+.cart-container [class ^= btn]{
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--blue-primary);
+  color: var(--bg-secondary);
+  font-size: 1rem;
+  transition: filter 0.1s ease-in-out;
+  cursor: pointer;
+}
+.cart-container [class ^= btn]:hover{
+  filter: opacity(70%);
+}
+
+/* Style */
+.btn-clean-cart{
+  display: block;
+  margin: 1rem auto !important;
+}
+.cart-container > span{
+  display: block;
+  margin: 0.5rem auto;
+  text-align: center;
+  font-size: 1.2rem;
+}

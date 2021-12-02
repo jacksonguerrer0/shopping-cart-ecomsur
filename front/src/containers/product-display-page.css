@@ -43,6 +43,9 @@
   font-size: 1rem;
   font-weight: bold;
 }
+.detail-product-buttons button:hover{
+  filter: opacity(70%);
+}
 .detail-product-buttons button:nth-child(2){
   margin-top: 0.5rem;
   background-color: var(--blue-primary);
