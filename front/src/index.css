@@ -4,6 +4,7 @@
   bx = box 
 */
 :root{
+  --c-gray: #666666;
   --c-black: #171717;
   --bg-primary: #EDEDED;
   --bg-secondary: #ffffff;
@@ -28,8 +29,8 @@ html{
 
 body {
   background-color: var(--bg-primary);
-  color: var(--c-black);
-  font-size: 16px;
+  color: var(--c-gray);
+  font-size: 18px;
   font-family: sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
@@ -39,4 +40,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+img{
+  width: 100%;
+  height: auto;
 }

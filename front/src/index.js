@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './containers/App'
+import ProductDisplayPage from './containers/ProductDisplayPage'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProductDisplayPage />
   </React.StrictMode>,
   document.getElementById('root')
 )
