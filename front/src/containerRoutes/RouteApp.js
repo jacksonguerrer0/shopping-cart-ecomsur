@@ -5,13 +5,15 @@ import NavMenu from '../components/NavMenu'
 import CartPage from '../containers/CartPage'
 import ProductDisplayPage from '../containers/ProductDisplayPage'
 import ProductListPage from '../containers/ProductListPage'
-import { getProducts } from '../redux/productsDucks'
+import { getLocalCart } from '../helpers/funtions'
+import { addCart, getProducts } from '../redux/productsDucks'
 
 const RouteApp = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getProducts())
+    dispatch(addCart(getLocalCart()))
   }, [dispatch])
   return (
     <BrowserRouter>

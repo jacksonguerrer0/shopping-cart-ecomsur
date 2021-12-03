@@ -15,3 +15,10 @@ export const getTotalQuantity = (products) => {
   products.forEach(ele => (totalQuantity = totalQuantity + ele.quantity))
   return totalQuantity > 99 ? '+99' : totalQuantity
 }
+
+export const getLocalCart = () => {
+  return JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')): []
+}
+export const setLocalCart = (productsCart) => {
+  localStorage.setItem('cart', JSON.stringify(productsCart))
+}

@@ -26,7 +26,7 @@ const CartPage = () => {
         </thead>
         <tbody>
         {
-          productsCart.map(ele => (
+          productsCart?.map(ele => (
             <tr key={ele._id}>
             <td>
             <Link to={`/detail/${ele._id}`}><img src={ele.image} alt={ele.name} />

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setLocalCart } from "../helpers/funtions";
 import { types } from "./types/types";
 // - El servidor se encuentra en:
 //   `http://localhost:5000/`
@@ -56,7 +57,7 @@ const insertProduct = (products) => ({
   type: types.GET_PRODUCTS,
   payload: products
 })
-const addCart = (cart) => ({
+export const addCart = (cart) => ({
   type: types.ADD_PRODUCT_CART,
   payload: cart
 })
@@ -93,6 +94,7 @@ export const addProductCart = (id, quantity = 1) => (dispatch, selector) => {
   ? noDuplicates
   : cartInitial
   dispatch(addCart(newProductsCart))
+  setLocalCart(newProductsCart)
 }
 
 export const deleteOneProductCart = (id) => (dispatch, selector) => {
@@ -106,6 +108,7 @@ export const deleteOneProductCart = (id) => (dispatch, selector) => {
   ? noDuplicates
   : cartFilter
   dispatch(deleteOneCart(newProductsCart))
+  setLocalCart(newProductsCart)
 }
 
 export const deleteProductCart = (id) => (dispatch, selector) => {
@@ -115,9 +118,13 @@ export const deleteProductCart = (id) => (dispatch, selector) => {
     type: types.REMOVE_ALL_PRODUCT_CART,
     payload: cartFilter
   })
+  setLocalCart(cartFilter)
 }
 
-export const clearCart = () => ({
+export const clearCart = () => {
+  setLocalCart([])
+  return({
   type: types.CLEAR_CART,
   payload: []
-})
+  })
+}
