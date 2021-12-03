@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 import logoDesktop from '../assets/LOGO-ECOMSUR-white-2.png'
 import logoMobile from '../assets/favicon.png'
 import './nav-menu.css'
+import { useSelector } from 'react-redux'
+import { getTotalQuantity } from '../helpers/funtions'
 const NavMenu = () => {
+  const { productsCart } = useSelector(state => state.products)
   return (
     <header className='container-nav'>
       <nav className='nav-menu'>
@@ -14,7 +17,7 @@ const NavMenu = () => {
           </picture>
         </Link>
         <input type="search" name="nav-search" placeholder='Search Product...' />
-        <div className='nav-cart'>        <Link to='/cart' ><span>##</span><i className="fas fa-shopping-cart"></i></Link>
+        <div className='nav-cart'><Link to='/cart' ><span>{getTotalQuantity(productsCart)}</span><i className="fas fa-shopping-cart"></i></Link>
         </div>
       </nav>
     </header>
