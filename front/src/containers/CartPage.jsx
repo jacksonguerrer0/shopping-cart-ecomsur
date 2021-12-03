@@ -1,7 +1,10 @@
 import React from 'react'
 import './cart-page.css'
 import {Link} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 const CartPage = () => {
+  const dispatch = useDispatch()
+  const handleAddCart = () => dispatch()
   return (
     <section className='cart-container'>
       <span><b>Total :###</b></span>
@@ -26,7 +29,7 @@ const CartPage = () => {
           <td>
             <button className='btn-minus'><i className="fas fa-minus"></i></button>
             <button className='btn-remove'><i className="fas fa-trash"></i></button>
-            <button className='btn-plus'><i className="fas fa-plus"></i></button>
+            <button className='btn-plus' onClick={handleAddCart}><i className="fas fa-plus"></i></button>
           </td>
         </tr>
         </tbody>

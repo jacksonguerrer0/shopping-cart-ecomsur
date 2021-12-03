@@ -24,6 +24,11 @@ const productsDucks = (state = initialState, action) => {
         ...state,
         products: action.payload
       };
+    case types.ADD_PRODUCT_CART:
+      return{
+        ...state,
+        productsCart: action.payload
+      }
     default:
       return state;
   }
@@ -36,7 +41,10 @@ const insertProduct = (products) => ({
   type: types.GET_PRODUCTS,
   payload: products
 })
-
+const addCart = (cart) => ({
+  type: types.ADD_PRODUCT_CART,
+  payload: cart
+})
 export const getProducts = () => async (dispatch) => {
   try {
     const res = await axios.get(urlProducts)
@@ -51,4 +59,17 @@ export const getProducts = () => async (dispatch) => {
     let message =  err.response?.statusText || "Ocurrió un error";
     throw message
   }
+}
+export const addProductCart = (id, quantity = 1) => (dispatch, selector) => {
+  const {products} = selector(state => state)
+  const product = products.products.find(ele => ele._id === id)
+  const productCart = products.productsCart.find(ele => ele._id === id)
+  const noDuplicates = products.productsCart.map(ele => (
+    ele._id === id ? {...ele, quantity: ele.quantity + quantity} : ele
+  ))
+  const cartInitial = [...products.productsCart, {...product, quantity: quantity}]
+  const newProductsCart = productCart 
+  ? noDuplicates
+  : cartInitial
+  dispatch(addCart(newProductsCart))
 }
