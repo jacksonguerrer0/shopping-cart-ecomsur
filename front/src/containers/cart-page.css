@@ -2,7 +2,7 @@
 .cart-table{
   display: block;
   width: 100%;
-  max-width: 880px;
+  max-width: 850px;
   padding: 1rem;
   margin: 0.5rem auto 3rem auto;
   background-color: var(--bg-secondary);

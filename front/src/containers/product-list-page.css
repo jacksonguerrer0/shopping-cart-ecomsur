@@ -1,5 +1,8 @@
 .container-product-list{
-  margin: 2rem 0.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 .container-product-list > h2{
   margin: 1rem 0;
@@ -38,4 +41,9 @@
   margin: 1rem 0;
   font-size: 1rem;
   font-weight: normal;
+}
+@media screen and (min-width: 800px) {
+  .product-list{
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }

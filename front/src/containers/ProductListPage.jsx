@@ -12,7 +12,7 @@ const ProductListPage = () => {
   console.log(product)
   return (
     <>
-        <main className='container-product-list'>
+      <main className='container-product-list'>
       <h2>Electronics</h2>
       <section className='product-list'>
         {

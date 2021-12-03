@@ -1,11 +1,14 @@
 .container-nav{
+  position: sticky;
+  top: 0;
   width: 100%;
   padding: 0.5rem;
   background-color: var(--bg-dark-blue);
 }
 .nav-menu{
   display: flex;
-  width: clamp(200px, 100%, 900px);
+  width: 100%;
+  max-width: 1000px;
   height: 80px;
   margin: 0 auto;
   justify-content: space-evenly;
