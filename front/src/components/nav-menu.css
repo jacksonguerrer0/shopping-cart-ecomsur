@@ -22,7 +22,7 @@
   height: 50px;
   object-fit: cover;
 }
-.nav-menu > input[type=search]{
+.nav-menu  input[type=search]{
   width: clamp(170px, 100vw, 450px);
   height: 40px;
   margin: 0 0.5rem;
