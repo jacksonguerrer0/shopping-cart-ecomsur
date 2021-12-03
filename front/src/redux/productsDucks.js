@@ -19,5 +19,6 @@ const productsDucks = (state = initialState, action) => {
       return state;
   }
 }
+export default productsDucks
 // Ations
 
