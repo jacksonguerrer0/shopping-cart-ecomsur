@@ -33,7 +33,7 @@ const ProductDisplayPage = () => {
       <span><b>$ {ele.price}</b></span>
       <br />
       <div className='detail-product-stock'>
-        <input type="number" name="quantity" defaultValue='1' onChange={handleQuantity} />
+        <input type="number" name="quantity" defaultValue='1' onChange={handleQuantity} min='1' />
         <p><small>stock: {ele.countInStock}</small></p>
       </div>
       <div className='detail-product-buttons'>
