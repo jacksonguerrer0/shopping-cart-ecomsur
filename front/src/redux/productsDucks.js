@@ -29,6 +29,21 @@ const productsDucks = (state = initialState, action) => {
         ...state,
         productsCart: action.payload
       }
+    case types.DELETE_ONE_PRODUCT_CART:
+      return {
+        ...state, 
+        productsCart: action.payload
+      }
+    case types.REMOVE_ALL_PRODUCT_CART:
+      return {
+        ...state,
+        productsCart: action.payload
+      }
+    case types.CLEAR_CART: 
+      return{
+        ...state,
+        productsCart: action.payload
+      }
     default:
       return state;
   }
@@ -45,6 +60,12 @@ const addCart = (cart) => ({
   type: types.ADD_PRODUCT_CART,
   payload: cart
 })
+const deleteOneCart = (cart) => ({
+  type: types.DELETE_ONE_PRODUCT_CART,
+  payload: cart
+})
+
+
 export const getProducts = () => async (dispatch) => {
   try {
     const res = await axios.get(urlProducts)
@@ -73,3 +94,30 @@ export const addProductCart = (id, quantity = 1) => (dispatch, selector) => {
   : cartInitial
   dispatch(addCart(newProductsCart))
 }
+
+export const deleteOneProductCart = (id) => (dispatch, selector) => {
+  const {products} = selector(state => state)
+  const productCart = products.productsCart.find(ele => ele._id === id)
+  const noDuplicates = products.productsCart.map(ele => (
+    ele._id === id ? {...ele, quantity: ele.quantity - 1} : ele
+  ))
+  const cartFilter = products.productsCart.filter(ele => ele._id !== id)
+  const newProductsCart = productCart.quantity > 1
+  ? noDuplicates
+  : cartFilter
+  dispatch(deleteOneCart(newProductsCart))
+}
+
+export const deleteProductCart = (id) => (dispatch, selector) => {
+  const {products} = selector(state => state)
+  const cartFilter = products.productsCart.filter(ele => ele._id !== id)
+  dispatch({
+    type: types.REMOVE_ALL_PRODUCT_CART,
+    payload: cartFilter
+  })
+}
+
+export const clearCart = () => ({
+  type: types.CLEAR_CART,
+  payload: []
+})
