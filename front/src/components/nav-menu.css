@@ -22,10 +22,14 @@
   height: 50px;
   object-fit: cover;
 }
+.nav-menu > form{
+  width: 100%;
+  max-width: 400px;
+}
 .nav-menu  input[type=search]{
-  width: clamp(170px, 100vw, 450px);
+  width: inherit;
   height: 40px;
-  margin: 0 0.5rem;
+  margin: 0 auto;
 }
 .nav-cart{
   width: 60px;
