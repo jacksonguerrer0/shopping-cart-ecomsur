@@ -4,6 +4,7 @@
   width: 100%;
   padding: 0.5rem;
   background-color: var(--bg-dark-blue);
+  z-index: 999;
 }
 .nav-menu{
   display: flex;

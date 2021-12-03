@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import './product-list-page.css'
 import { Link, Outlet } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../redux/productsDucks'
+import { useSelector } from 'react-redux'
 
 const ProductListPage = () => {
   const {products} = useSelector(state => state.products)
-  const dispatch = useDispatch()
 
-
-  useEffect(() => {
-    dispatch(getProducts())
-  }, [dispatch])
   return (
     <>
       <main className='container-product-list'>

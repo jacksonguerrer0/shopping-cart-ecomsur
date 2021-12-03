@@ -66,6 +66,15 @@
   color: var(--bg-secondary);
   cursor: pointer;
 }
+.detail-product-buttons button:nth-child(2):disabled{
+  margin-top: 0.5rem;
+  color: var(--c-black);
+  background-color: var(--blue-secondary);
+  cursor:default;
+}
+.detail-product-buttons button:nth-child(2):disabled:hover{
+  filter: opacity(100%);
+}
 
 /*  */
 @media screen and (min-width: 800px){

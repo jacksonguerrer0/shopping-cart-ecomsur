@@ -14,7 +14,6 @@ const urlImages = 'http://localhost:5000'
 const initialState = {
   products: [],
   productsCart: [],
-
 }
 
 // Reducer
